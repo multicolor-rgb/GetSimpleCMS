@@ -303,11 +303,11 @@ $isUnixHost = !hostIsWindows();
 		echo '<th class="file_date right">'.i18n_r('DATE').'</th>';
 		echo '<th class="file_actions"><!-- actions --></th></tr>';
 		echo '</thead><tbody>';  
-		if (count($dirsSorted) != 0) {
+		if (count((array)$dirsSorted) != 0) {
 		$foldercount = 0;
 
 		// show folders
-		foreach ($dirsSorted as $upload) {
+		    if (count((array)$dirsSorted) != 0) { 
 			# check to see if folder is empty
 			$directory_delete = null;
 			if ( check_empty_folder($path.$upload['name']) && $allowdelete ) {  
